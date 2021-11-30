@@ -1,22 +1,42 @@
 # blockchain-developer-bootcamp-final-project
 ConsenSys Academy final project 
 
-I am still choosing between 3 final projects.
-1. Land Registry
-2. Grading system
-3. DeFi Dashboard like Zapper or Instadapp
+On- chain relationship 
 
-Land Registry:
+I created a decentralized application that allows a certain user to create a relationship between him and his special person which will be forever saved in the blockchain. The user needs 
+The user needs to enter his name, second person's name, the relationship they are in and the number of kids they have. 
+User can also destroy his relationship by deleting persons name and setting his status to single.
+ If the relationship is blessed with another child they can easily add the child to their relationship. 
 
-All real rights on real estate are entered in the land register (eg property right, mortgage, land debt, easement right, encumbrance right, building right).Here in Slovenia we
-have an very old centralized system for land registry.
+The directory structure
 
-Grading system:
+- contracts: Smart contracts that are deployed on the Rinkeby testnet.
+    - Relationship.sol which is the main smart contract of this project.
 
-I would like to implement an grading system where you can grade each other as a person. For an example there is a waiter that served you well and you would like to tip him. With
-the tip you can pay for the transaction fees and rate the waiter for good service or even write a good comment about him/her.
+- front-end: everything needed for the front end
+    - abi.js which is the abi of the Relationship.sol
+    - index.html 
+    - index.js where all the magic with web3.js is made. 
 
-DeFi Dashboard:
+- migrations: Migration files for deploying contracts in contracts directory
 
-I would like to create an middleware that aggregates multiple DeFi protocols into one upgradable smart contract layer. For now i am leaning towards this project to be my final
-project. Unfortunately i do not understand how broad and demanding this project will be.
+- test: Tests for smart contracts
+    - ast_helper.js helper for checking the state variables
+    - exceptionHelpers.js helper for exceptions
+    - relationships_test.js main test file !!
+
+How to run this project locally:
+
+Prerequisites:
+    Node.js >= v14
+    Truffle and Ganache >= 5.4.19
+    git clone REPOSITORY_URL
+
+Backend - Blockchain/Smart Contracts
+    Run npm install in project root to install smart contract dependencies
+    Run local testnet in either port 7545 with Ganache GUI 
+    truffle migrate --network development/ganache (for GUI)
+    truffle console --network development/ganache
+    Run tests in Truffle console: test
+
+My ETH for the NFT certificate(which is awesome!): 0x4f415E45546E496adf520CDd94c1753d95875067
