@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <title>Relationship maker</title>
+</head>
+<body style="background-image: url('picture/relationship.jpg'); background-size: cover;
+background-repeat: no-repeat; font-size: large;">
+    <div class="container" style="background-color: #ffc0cb; opacity: 0.9; ">
+        <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-9">
+            </div>
+            <div class="col-1">
+                <div class="float-right  flex-col space-y-2 justify-center items-center" >
+                    <button id='loginButton' onclick="" class=" rounded-md p-3 bg-purple-500 text-white">
+                    Login with MetaMask
+                    </button>
+                    <p id='userWallet' class='text-lg text-gray-600 my-2'></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-9 object-none ">
+                <h1 style="text-align: center">On-chain relationship</h1>
+                <div id="displayRelationship" style="text-align: center;">
+                    <h3 id="display"></h3>
+                    <p id="first_person_display"></p>
+                    <p id="second_person_display"></p>
+                    <p id="status_display"></p>
+                    <p id="kids_display"></p>
+                    <button id="display_relationship" class="mx-auto rounded-md p-2 bg-purple-500 text-white "> Display my relationship</button>
+                </div>
+                <br>
+                <br>
+                <div id="createRelathionship"   style="text-align: justify;">
+                    <h1 style="text-align: center;">Create relationship</h1>
+                    <h4>Save your relationship in to the blockchain. It can be silled for ever if you want to ;). </h4>
+                    <div class="block ...">
+                        <label for="first_person">First person name:</label>
+                        <input type="text" id="first_person" placeholder="Name " required><br>
+                    </div>
+                    <label for="second_person">Second person name: </label>
+                    <input type="text" id="second_person" placeholder="Name "><br>
+                    <label for="status">Status</label>
+                    <select id="status" required>        
+                        <option value="0">Single</option>
+                        <option value="1">Taken</option>
+                        <option value="2">Married</option>
+                    </select><br>
+                    <label for="kids">Number of kids</label>
+                    <input type="number" id="kids">
+                    <button id="create_relationship" class="mx-auto rounded-md p-2 bg-purple-500 text-white"> Create</button>
+                    <p>We support monogumus relationships so u can get only one relationship per address. That doesnt mean you can't create a different relationship from another addres ;).</p>
+                </div>
+                <br>
+                <br>
+                <div id="itsNotWorkingOut"  style="text-align: justify;">
+                    <h1 style="text-align: center;">Destroy your relationship</h1>
+                    <h4>I want to be single again!!!</h4>
+                    <label for="person_name">The persons name that you want to remove from relationship: </label><br>
+                    <input type="text" id="person_name" placeholder="Name"><br>
+                    <button id="destroy_relathionship" class="mx-auto rounded-md p-2 bg-purple-500 text-white"> Destroy relationship</button>
+                </div>
+                <br>
+                <br>
+                <div id="addKids"  style="text-align: justify;">
+                    <h1 style="text-align: center;">Add kids</h1>
+                    <h4>Congratulations a happy day for you family!! Add some more kids over here.</h3>
+                    <label for="add_kids">Add kids</label>
+                    <input type="number" id="add_kids">
+                    <button id="btn_add_kids" class="mx-auto rounded-md p-2 bg-purple-500 text-white">Add kids</button>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
+        </div>
+    </div>
+    <script src="abi.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
